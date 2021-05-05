@@ -61,18 +61,21 @@ functions:
       - httpApi:
           path: /
           method: get
+          cors: true
   canoe:
     handler: bin/canoe
     events:
       - httpApi:
           path: /canoe
           method: get
+          cors: true
   jetski:
     handler: bin/jetski
     events:
       - httpApi:
           path: /jetski
           method: get
+          cors: true
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
 #    Check the event documentation for details

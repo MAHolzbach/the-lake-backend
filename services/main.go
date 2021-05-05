@@ -64,8 +64,10 @@ func Handler(ctx context.Context) (Response, error) {
 		IsBase64Encoded: false,
 		Body:            buf.String(),
 		Headers: map[string]string{
-			"Content-Type":         "application/json",
-			"X-TheLake-Func-Reply": "services-handler",
+			"Content-Type":                     "application/json",
+			"X-TheLake-Func-Reply":             "services-handler",
+			"Access-Control-Allow-Origin":      "*",
+			"Access-Control-Allow-Credentials": "true",
 		},
 	}
 
