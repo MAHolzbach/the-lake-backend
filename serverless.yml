@@ -55,6 +55,12 @@ package:
     - ./bin/**
 
 functions:
+  services:
+    handler: bin/services
+    events:
+      - httpApi:
+          path: /
+          method: get
   canoe:
     handler: bin/canoe
     events:

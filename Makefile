@@ -2,6 +2,7 @@
 
 build: gomodgen
 	export GO111MODULE=on
+	env GOOS=linux go build -ldflags="-s -w" -o bin/services services/main.go
 	env GOOS=linux go build -ldflags="-s -w" -o bin/canoe canoe/main.go
 	env GOOS=linux go build -ldflags="-s -w" -o bin/jetski jetski/main.go
 
