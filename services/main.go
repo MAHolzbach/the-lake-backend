@@ -20,8 +20,8 @@ func Handler(ctx context.Context) (Response, error) {
 	var buf bytes.Buffer
 
 	type ServiceData struct {
-		ServiceName  string `json:"serviceName"`
-		ServicePrice string `json:"servicePrice"`
+		ServiceName  string `json:"name"`
+		ServicePrice string `json:"price"`
 	}
 
 	services := []ServiceData{
@@ -42,7 +42,7 @@ func Handler(ctx context.Context) (Response, error) {
 			ServicePrice: "4.99",
 		},
 		{
-			ServiceName:  "Acuba",
+			ServiceName:  "Scuba",
 			ServicePrice: "19.99",
 		},
 		{
