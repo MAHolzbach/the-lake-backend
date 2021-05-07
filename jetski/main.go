@@ -27,7 +27,7 @@ func Handler(ctx context.Context) (Response, error) {
 
 	jetskiData := JetskiData{
 		VehicleType: "jetski",
-		Price:       "24.99",
+		Price:       "15.99",
 		Colors:      []string{"Red", "Blue", "Green", "Yellow"},
 	}
 
@@ -44,8 +44,10 @@ func Handler(ctx context.Context) (Response, error) {
 		IsBase64Encoded: false,
 		Body:            buf.String(),
 		Headers: map[string]string{
-			"Content-Type":         "application/json",
-			"X-TheLake-Func-Reply": "jetski-handler",
+			"Content-Type":                     "application/json",
+			"X-TheLake-Func-Reply":             "jetski-handler",
+			"Access-Control-Allow-Origin":      "*",
+			"Access-Control-Allow-Credentials": "true",
 		},
 	}
 

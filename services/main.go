@@ -21,32 +21,39 @@ func Handler(ctx context.Context) (Response, error) {
 
 	type ServiceData struct {
 		ServiceName  string `json:"name"`
+		RenderName   string `json:"renderName"`
 		ServicePrice string `json:"price"`
 	}
 
 	services := []ServiceData{
 		{
-			ServiceName:  "Jetski",
+			ServiceName:  "jetski",
+			RenderName:   "Jetskiing",
 			ServicePrice: "15.99",
 		},
 		{
-			ServiceName:  "Waterski",
+			ServiceName:  "waterski",
+			RenderName:   "Waterskiing",
 			ServicePrice: "25.99",
 		},
 		{
-			ServiceName:  "Fishing",
-			ServicePrice: "1.99",
+			ServiceName:  "windsurf",
+			RenderName:   "Windsurfing",
+			ServicePrice: "11.99",
 		},
 		{
-			ServiceName:  "Kayak",
+			ServiceName:  "kayak",
+			RenderName:   "Kayaking",
 			ServicePrice: "4.99",
 		},
 		{
-			ServiceName:  "Scuba",
+			ServiceName:  "scuba",
+			RenderName:   "Scuba Diving",
 			ServicePrice: "19.99",
 		},
 		{
-			ServiceName:  "Canoe",
+			ServiceName:  "canoe",
+			RenderName:   "Canoeing",
 			ServicePrice: "5.99",
 		},
 	}

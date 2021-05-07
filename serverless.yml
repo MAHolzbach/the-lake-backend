@@ -76,6 +76,34 @@ functions:
           path: /jetski
           method: get
           cors: true
+  kayak:
+    handler: bin/kayak
+    events:
+      - httpApi:
+          path: /kayak
+          method: get
+          cors: true
+  scuba:
+    handler: bin/scuba
+    events:
+      - httpApi:
+          path: /scuba
+          method: get
+          cors: true
+  waterski:
+    handler: bin/waterski
+    events:
+      - httpApi:
+          path: /waterski
+          method: get
+          cors: true
+  windsurf:
+    handler: bin/windsurf
+    events:
+      - httpApi:
+          path: /windsurf
+          method: get
+          cors: true
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
 #    Check the event documentation for details

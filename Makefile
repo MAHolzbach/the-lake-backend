@@ -5,6 +5,10 @@ build: gomodgen
 	env GOOS=linux go build -ldflags="-s -w" -o bin/services services/main.go
 	env GOOS=linux go build -ldflags="-s -w" -o bin/canoe canoe/main.go
 	env GOOS=linux go build -ldflags="-s -w" -o bin/jetski jetski/main.go
+	env GOOS=linux go build -ldflags="-s -w" -o bin/kayak kayak/main.go
+	env GOOS=linux go build -ldflags="-s -w" -o bin/scuba scuba/main.go
+	env GOOS=linux go build -ldflags="-s -w" -o bin/waterski waterski/main.go
+	env GOOS=linux go build -ldflags="-s -w" -o bin/windsurf windsurf/main.go
 
 clean:
 	rm -rf ./bin ./vendor go.sum
