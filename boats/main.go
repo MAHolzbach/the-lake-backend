@@ -19,19 +19,53 @@ type Response events.APIGatewayProxyResponse
 func Handler(ctx context.Context) (Response, error) {
 	var buf bytes.Buffer
 
-	type WaterskiData struct {
-		VehicleType string   `json:"vehicleType"`
-		Price       string   `json:"price"`
-		Colors      []string `json:"colors"`
+	type BoatData struct {
+		BoatName   string `json:"name"`
+		RenderName string `json:"renderName"`
+		BoatPrice  string `json:"price"`
+		Status     string `json:"status"`
 	}
 
-	waterskiData := WaterskiData{
-		VehicleType: "waterski",
-		Price:       "25.99",
-		Colors:      []string{"Red", "Blue", "Green", "Yellow"},
+	boats := []BoatData{
+		{
+			BoatName:   "breeze",
+			RenderName: "The Breeze",
+			BoatPrice:  "150",
+			Status:     "Popular",
+		},
+		{
+			BoatName:   "lancer",
+			RenderName: "The Lancer",
+			BoatPrice:  "75",
+			Status:     "",
+		},
+		{
+			BoatName:   "nina",
+			RenderName: "The Nina",
+			BoatPrice:  "100",
+			Status:     "Unavailable",
+		},
+		{
+			BoatName:   "pinta",
+			RenderName: "The Pinta",
+			BoatPrice:  "45",
+			Status:     "Budget",
+		},
+		{
+			BoatName:   "santaMaria",
+			RenderName: "The Santa Maria",
+			BoatPrice:  "80",
+			Status:     "",
+		},
+		{
+			BoatName:   "waverunner",
+			RenderName: "The Waverunner",
+			BoatPrice:  "125",
+			Status:     "",
+		},
 	}
 
-	body, err := json.Marshal(waterskiData)
+	body, err := json.Marshal(boats)
 
 	if err != nil {
 		return Response{StatusCode: 404}, err
@@ -45,7 +79,7 @@ func Handler(ctx context.Context) (Response, error) {
 		Body:            buf.String(),
 		Headers: map[string]string{
 			"Content-Type":                     "application/json",
-			"X-TheLake-Func-Reply":             "waterski-handler",
+			"X-TheLake-Func-Reply":             "boats-handler",
 			"Access-Control-Allow-Origin":      "*",
 			"Access-Control-Allow-Credentials": "true",
 		},

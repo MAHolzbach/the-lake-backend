@@ -2,13 +2,13 @@
 
 build: gomodgen
 	export GO111MODULE=on
-	env GOOS=linux go build -ldflags="-s -w" -o bin/services services/main.go
-	env GOOS=linux go build -ldflags="-s -w" -o bin/canoe canoe/main.go
-	env GOOS=linux go build -ldflags="-s -w" -o bin/jetski jetski/main.go
-	env GOOS=linux go build -ldflags="-s -w" -o bin/kayak kayak/main.go
-	env GOOS=linux go build -ldflags="-s -w" -o bin/scuba scuba/main.go
-	env GOOS=linux go build -ldflags="-s -w" -o bin/waterski waterski/main.go
-	env GOOS=linux go build -ldflags="-s -w" -o bin/windsurf windsurf/main.go
+	env GOOS=linux go build -ldflags="-s -w" -o bin/boats boats/main.go
+	env GOOS=linux go build -ldflags="-s -w" -o bin/breeze breeze/main.go
+	env GOOS=linux go build -ldflags="-s -w" -o bin/lancer lancer/main.go
+	env GOOS=linux go build -ldflags="-s -w" -o bin/nina nina/main.go
+	env GOOS=linux go build -ldflags="-s -w" -o bin/pinta pinta/main.go
+	env GOOS=linux go build -ldflags="-s -w" -o bin/santaMaria santaMaria/main.go
+	env GOOS=linux go build -ldflags="-s -w" -o bin/waverunner waverunner/main.go
 
 clean:
 	rm -rf ./bin ./vendor go.sum

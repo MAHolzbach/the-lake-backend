@@ -19,46 +19,19 @@ type Response events.APIGatewayProxyResponse
 func Handler(ctx context.Context) (Response, error) {
 	var buf bytes.Buffer
 
-	type ServiceData struct {
-		ServiceName  string `json:"name"`
-		RenderName   string `json:"renderName"`
-		ServicePrice string `json:"price"`
+	type WindrunnerData struct {
+		BoatName string   `json:"boatName"`
+		Price    string   `json:"price"`
+		Colors   []string `json:"colors"`
 	}
 
-	services := []ServiceData{
-		{
-			ServiceName:  "jetski",
-			RenderName:   "Jetskiing",
-			ServicePrice: "15.99",
-		},
-		{
-			ServiceName:  "waterski",
-			RenderName:   "Waterskiing",
-			ServicePrice: "25.99",
-		},
-		{
-			ServiceName:  "windsurf",
-			RenderName:   "Windsurfing",
-			ServicePrice: "11.99",
-		},
-		{
-			ServiceName:  "kayak",
-			RenderName:   "Kayaking",
-			ServicePrice: "4.99",
-		},
-		{
-			ServiceName:  "scuba",
-			RenderName:   "Scuba Diving",
-			ServicePrice: "19.99",
-		},
-		{
-			ServiceName:  "canoe",
-			RenderName:   "Canoeing",
-			ServicePrice: "5.99",
-		},
+	windrunnerData := WindrunnerData{
+		BoatName: "windsurf",
+		Price:    "11.99",
+		Colors:   []string{"Red", "Blue", "Green", "Yellow"},
 	}
 
-	body, err := json.Marshal(services)
+	body, err := json.Marshal(windrunnerData)
 
 	if err != nil {
 		return Response{StatusCode: 404}, err
@@ -72,7 +45,7 @@ func Handler(ctx context.Context) (Response, error) {
 		Body:            buf.String(),
 		Headers: map[string]string{
 			"Content-Type":                     "application/json",
-			"X-TheLake-Func-Reply":             "services-handler",
+			"X-TheLake-Func-Reply":             "windrunner-handler",
 			"Access-Control-Allow-Origin":      "*",
 			"Access-Control-Allow-Credentials": "true",
 		},

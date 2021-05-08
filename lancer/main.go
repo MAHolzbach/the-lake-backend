@@ -19,19 +19,25 @@ type Response events.APIGatewayProxyResponse
 func Handler(ctx context.Context) (Response, error) {
 	var buf bytes.Buffer
 
-	type ScubaData struct {
-		VehicleType string   `json:"vehicleType"`
-		Price       string   `json:"price"`
-		Colors      []string `json:"colors"`
+	type LancerData struct {
+		BoatName   string   `json:"boatName"`
+		RenderName string   `json:"renderName"`
+		Price      string   `json:"price"`
+		Colors     []string `json:"colors"`
+		Power      []string `json:"power"`
+		Blurb      string   `json:"blurb"`
 	}
 
-	scubaData := ScubaData{
-		VehicleType: "scuba",
-		Price:       "19.99",
-		Colors:      []string{"Red", "Blue", "Green", "Yellow"},
+	lancerData := LancerData{
+		BoatName:   "lancer",
+		RenderName: "The Lancer",
+		Price:      "15.99",
+		Colors:     []string{"Red", "Blue", "Green", "Gold"},
+		Power:      []string{"100", "150", "200", "300"},
+		Blurb:      "Enjoy the ride of your life as you zip through the waves and feel the cool splash of water on your face!",
 	}
 
-	body, err := json.Marshal(scubaData)
+	body, err := json.Marshal(lancerData)
 
 	if err != nil {
 		return Response{StatusCode: 404}, err
@@ -45,7 +51,7 @@ func Handler(ctx context.Context) (Response, error) {
 		Body:            buf.String(),
 		Headers: map[string]string{
 			"Content-Type":                     "application/json",
-			"X-TheLake-Func-Reply":             "scuba-handler",
+			"X-TheLake-Func-Reply":             "lancer-handler",
 			"Access-Control-Allow-Origin":      "*",
 			"Access-Control-Allow-Credentials": "true",
 		},

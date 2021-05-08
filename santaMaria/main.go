@@ -19,19 +19,19 @@ type Response events.APIGatewayProxyResponse
 func Handler(ctx context.Context) (Response, error) {
 	var buf bytes.Buffer
 
-	type WindsurfData struct {
-		VehicleType string   `json:"vehicleType"`
-		Price       string   `json:"price"`
-		Colors      []string `json:"colors"`
+	type SantaMariaData struct {
+		BoatName string   `json:"boatName"`
+		Price    string   `json:"price"`
+		Colors   []string `json:"colors"`
 	}
 
-	windsurfData := WindsurfData{
-		VehicleType: "windsurf",
-		Price:       "11.99",
-		Colors:      []string{"Red", "Blue", "Green", "Yellow"},
+	santaMariaData := SantaMariaData{
+		BoatName: "santaMaria",
+		Price:    "25.99",
+		Colors:   []string{"Red", "Blue", "Green", "Yellow"},
 	}
 
-	body, err := json.Marshal(windsurfData)
+	body, err := json.Marshal(santaMariaData)
 
 	if err != nil {
 		return Response{StatusCode: 404}, err
@@ -45,7 +45,7 @@ func Handler(ctx context.Context) (Response, error) {
 		Body:            buf.String(),
 		Headers: map[string]string{
 			"Content-Type":                     "application/json",
-			"X-TheLake-Func-Reply":             "windsurf-handler",
+			"X-TheLake-Func-Reply":             "santaMaria-handler",
 			"Access-Control-Allow-Origin":      "*",
 			"Access-Control-Allow-Credentials": "true",
 		},

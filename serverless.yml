@@ -55,53 +55,53 @@ package:
     - ./bin/**
 
 functions:
-  services:
-    handler: bin/services
+  boats:
+    handler: bin/boats
     events:
       - httpApi:
           path: /
           method: get
           cors: true
-  canoe:
-    handler: bin/canoe
+  breeze:
+    handler: bin/breeze
     events:
       - httpApi:
-          path: /canoe
+          path: /breeze
           method: get
           cors: true
-  jetski:
-    handler: bin/jetski
+  lancer:
+    handler: bin/lancer
     events:
       - httpApi:
-          path: /jetski
+          path: /lancer
           method: get
           cors: true
-  kayak:
-    handler: bin/kayak
+  nina:
+    handler: bin/nina
     events:
       - httpApi:
-          path: /kayak
+          path: /nina
           method: get
           cors: true
-  scuba:
-    handler: bin/scuba
+  pinta:
+    handler: bin/pinta
     events:
       - httpApi:
-          path: /scuba
+          path: /pinta
           method: get
           cors: true
-  waterski:
-    handler: bin/waterski
+  santaMaria:
+    handler: bin/santaMaria
     events:
       - httpApi:
-          path: /waterski
+          path: /santaMaria
           method: get
           cors: true
-  windsurf:
-    handler: bin/windsurf
+  waverunner:
+    handler: bin/waverunner
     events:
       - httpApi:
-          path: /windsurf
+          path: /waverunner
           method: get
           cors: true
 #    The following are a few example events you can configure
