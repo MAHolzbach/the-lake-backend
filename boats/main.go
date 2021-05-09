@@ -48,20 +48,20 @@ func Handler(ctx context.Context) (Response, error) {
 		{
 			BoatName:   "pinta",
 			RenderName: "The Pinta",
-			BoatPrice:  "45",
-			Status:     "Budget",
+			BoatPrice:  "350",
+			Status:     "",
 		},
 		{
 			BoatName:   "santaMaria",
 			RenderName: "The Santa Maria",
 			BoatPrice:  "80",
-			Status:     "",
+			Status:     "Budget",
 		},
 		{
 			BoatName:   "waverunner",
 			RenderName: "The Waverunner",
 			BoatPrice:  "125",
-			Status:     "",
+			Status:     "Fast!",
 		},
 	}
 

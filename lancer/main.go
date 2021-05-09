@@ -27,7 +27,6 @@ func Handler(ctx context.Context) (Response, error) {
 		Length     string `json:"length"`
 		Capacity   int    `json:"capacity"`
 		Price      string `json:"price"`
-		Blurb      string `json:"blurb"`
 	}
 
 	lancerData := LancerData{
@@ -38,7 +37,6 @@ func Handler(ctx context.Context) (Response, error) {
 		Length:     "6 meters",
 		Capacity:   6,
 		Price:      "75",
-		Blurb:      "Enjoy the ride of your life as you zip through the waves and feel the cool splash of water on your face!",
 	}
 
 	body, err := json.Marshal(lancerData)

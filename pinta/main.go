@@ -20,15 +20,23 @@ func Handler(ctx context.Context) (Response, error) {
 	var buf bytes.Buffer
 
 	type PintaData struct {
-		BoatName string   `json:"boatName"`
-		Price    string   `json:"price"`
-		Colors   []string `json:"colors"`
+		BoatName   string `json:"boatName"`
+		RenderName string `json:"renderName"`
+		Class      string `json:"class"`
+		Width      string `json:"width"`
+		Length     string `json:"length"`
+		Capacity   int    `json:"capacity"`
+		Price      string `json:"price"`
 	}
 
 	pintaData := PintaData{
-		BoatName: "pinta",
-		Price:    "45",
-		Colors:   []string{"Red", "Blue", "Green", "Yellow"},
+		BoatName:   "pinta",
+		RenderName: "The Pinta",
+		Class:      "Displacement Yacht",
+		Width:      "10 meters",
+		Length:     "24 meters",
+		Capacity:   16,
+		Price:      "350",
 	}
 
 	body, err := json.Marshal(pintaData)
