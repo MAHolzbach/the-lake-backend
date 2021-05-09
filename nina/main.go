@@ -27,7 +27,7 @@ func Handler(ctx context.Context) (Response, error) {
 
 	ninaData := NinaData{
 		BoatName: "nina",
-		Price:    "4.99",
+		Price:    "100",
 		Colors:   []string{"Red", "Blue", "Green", "Yellow"},
 	}
 

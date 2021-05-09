@@ -27,7 +27,7 @@ func Handler(ctx context.Context) (Response, error) {
 
 	windrunnerData := WindrunnerData{
 		BoatName: "windsurf",
-		Price:    "11.99",
+		Price:    "125",
 		Colors:   []string{"Red", "Blue", "Green", "Yellow"},
 	}
 

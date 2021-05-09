@@ -20,20 +20,24 @@ func Handler(ctx context.Context) (Response, error) {
 	var buf bytes.Buffer
 
 	type LancerData struct {
-		BoatName   string   `json:"boatName"`
-		RenderName string   `json:"renderName"`
-		Price      string   `json:"price"`
-		Colors     []string `json:"colors"`
-		Power      []string `json:"power"`
-		Blurb      string   `json:"blurb"`
+		BoatName   string `json:"boatName"`
+		RenderName string `json:"renderName"`
+		Class      string `json:"class"`
+		Width      string `json:"width"`
+		Length     string `json:"length"`
+		Capacity   int    `json:"capacity"`
+		Price      string `json:"price"`
+		Blurb      string `json:"blurb"`
 	}
 
 	lancerData := LancerData{
 		BoatName:   "lancer",
 		RenderName: "The Lancer",
-		Price:      "15.99",
-		Colors:     []string{"Red", "Blue", "Green", "Gold"},
-		Power:      []string{"100", "150", "200", "300"},
+		Class:      "Sport Cruiser",
+		Width:      "2 meters",
+		Length:     "6 meters",
+		Capacity:   6,
+		Price:      "75",
 		Blurb:      "Enjoy the ride of your life as you zip through the waves and feel the cool splash of water on your face!",
 	}
 
