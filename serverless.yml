@@ -58,49 +58,49 @@ functions:
   boats:
     handler: bin/boats
     events:
-      - httpApi:
+      - http:
           path: /
           method: get
           cors: true
   breeze:
     handler: bin/breeze
     events:
-      - httpApi:
+      - http:
           path: /breeze
           method: get
           cors: true
   lancer:
     handler: bin/lancer
     events:
-      - httpApi:
+      - http:
           path: /lancer
           method: get
           cors: true
   nina:
     handler: bin/nina
     events:
-      - httpApi:
+      - http:
           path: /nina
           method: get
           cors: true
   pinta:
     handler: bin/pinta
     events:
-      - httpApi:
+      - http:
           path: /pinta
           method: get
           cors: true
   santaMaria:
     handler: bin/santaMaria
     events:
-      - httpApi:
+      - http:
           path: /santaMaria
           method: get
           cors: true
   waverunner:
     handler: bin/waverunner
     events:
-      - httpApi:
+      - http:
           path: /waverunner
           method: get
           cors: true
